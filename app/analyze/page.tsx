@@ -1,0 +1,8 @@
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Navbar } from "@/components/navbar";
+import { AIAnalysisCard } from "@/components/ai-analysis-card";
+import { ArrowRight, Check } from "@/components/icons";
+const steps = ["Reading your description", "Identifying the issue", "Determining priority", "Finding the right department"];
+export default function AnalyzePage() { const [complete, setComplete] = useState(false); useEffect(() => { const timer = setTimeout(() => setComplete(true), 1400); return () => clearTimeout(timer); }, []); return <><Navbar /><main className="shell max-w-3xl py-12 sm:py-16">{!complete ? <div className="mx-auto max-w-xl py-10 text-center"><div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-moss-100"><span className="h-7 w-7 animate-spin rounded-full border-2 border-moss-600 border-t-transparent" /></div><p className="eyebrow mt-7">CampusFix AI</p><h1 className="mt-3 text-3xl font-bold tracking-tight">Understanding your report...</h1><div className="card mt-8 space-y-4 p-6 text-left">{steps.map((step, i) => <div key={step} className="flex items-center gap-3 text-sm"><span className={`grid h-6 w-6 place-items-center rounded-full ${i < 2 ? "bg-moss-600 text-white" : "bg-moss-50 text-moss-600"}`}><Check className="h-3.5 w-3.5" /></span><span className={i < 2 ? "font-medium" : "text-slate-600"}>{step}</span></div>)}</div></div> : <div><p className="eyebrow mb-3">CampusFix AI</p><h1 className="mb-8 text-3xl font-bold tracking-tight">Here’s what we found.</h1><AIAnalysisCard /><Link href="/submitted" className="btn-primary mt-7">Create Complaint <ArrowRight className="h-4 w-4" /></Link></div>}</main></>; }

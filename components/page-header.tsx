@@ -1,0 +1,1 @@
+export function PageHeader({ title, subtitle, eyebrow }: { title: string; subtitle: string; eyebrow?: string }) { return <div className="mb-9"><p className="eyebrow mb-3">{eyebrow ?? "CampusFix"}</p><h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1><p className="mt-3 max-w-xl text-base leading-7 text-slate-600">{subtitle}</p></div>; }

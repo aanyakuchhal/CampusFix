@@ -1,0 +1,1 @@
+export function StatCard({ value, label, accent = "text-ink" }: { value: string | number; label: string; accent?: string }) { return <div className="card p-5"><p className={`text-3xl font-bold ${accent}`}>{value}</p><p className="mt-1 text-sm text-slate-500">{label}</p></div>; }
