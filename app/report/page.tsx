@@ -22,7 +22,7 @@ export default function ReportPage() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3001/analyze", {
+      const response = await fetch("/analyze", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
