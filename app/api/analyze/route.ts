@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { analyzeComplaint } from "../../analyze-complaint";
+import { analyzeComplaint } from "../../../analyze-complaint";
 
 export const runtime = "nodejs";
 
